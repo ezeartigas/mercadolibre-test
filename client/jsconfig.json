@@ -1,0 +1,21 @@
+{
+   "compilerOptions": {
+      "baseUrl": "./",
+      "jsx": "react",
+      "paths": {
+         "@api/*": ["src/api/*"],
+         "@components/common": ["src/components/common"],
+         "@components/domain": ["src/components/domain"],
+         "@components/layout": ["src/components/layout"],
+         "@components/ui": ["src/components/ui"],
+         "@styles/*": ["src/styles/*"],
+         "@hooks": ["src/hooks"],
+         "@context/*": ["src/context/*"],
+         "@page-components": ["src/page-components"],
+         "@mock/*": ["src/mock/*"],
+         "@utils/*": ["src/utils/*"]
+      }
+   },
+   "include": ["src"],
+   "exclude": ["node_modules"]
+}

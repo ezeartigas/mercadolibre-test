@@ -1,0 +1,22 @@
+/* Colors */
+$color-gray-100: #eee;
+$color-gray-200: #999;
+$color-gray-300: #666;
+$color-gray-400: #333;
+$color-primary: #ffe600;
+$color-secondary: #3483fa;
+
+/* Views */
+$breakpoint-view: 1440px;
+$breakpoints: (
+   'mobile': 320px,
+   'tablet': 768px,
+   'desktop': 1024px,
+);
+
+/* Spaces */
+$space-1: 16px;
+$space-2: 32px;
+
+/* Font */
+$font-family: 'Poppins', sans-serif;

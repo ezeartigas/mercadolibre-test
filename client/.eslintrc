@@ -1,0 +1,35 @@
+{
+   "env": {
+      "browser": true,
+      "node": true,
+      "es2021": true
+   },
+   "extends": [
+      "next",
+      "next/core-web-vitals",
+      "eslint:recommended",
+      "plugin:import/errors",
+      "plugin:import/warnings",
+      "prettier"
+   ],
+   "settings": {
+      "import/resolver": {
+         "eslint-import-resolver-custom-alias": {
+            "alias": {
+               "@api": "./src/api",
+               "@components/common": "./src/components/common",
+               "@components/domain": "./src/components/domain",
+               "@components/layout": "./src/components/layout",
+               "@components/ui": "./src/components/ui",
+               "@styles/*": "./src/styles",
+               "@hooks": "./src/hooks",
+               "@context": "./src/context",
+               "@page-components": "./src/page-components",
+               "@mock": "./src/mock",
+               "@utils": "./src/utils"
+            },
+            "extensions": [".js", ".jsx"]
+         }
+      }
+   }
+}
