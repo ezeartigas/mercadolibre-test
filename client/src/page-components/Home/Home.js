@@ -1,3 +1,5 @@
+import { MasterLayout } from '@components/layout';
+
 export default function Home() {
-   return <div>home</div>;
+   return <MasterLayout>home</MasterLayout>;
 }

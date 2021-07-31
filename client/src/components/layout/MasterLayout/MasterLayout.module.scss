@@ -1,0 +1,12 @@
+.container {
+   background-color: $color-gray-100;
+   min-height: 100vh;
+
+   .content {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      max-width: $breakpoint-view;
+      margin: auto;
+      padding: $space-1;
+   }
+}
