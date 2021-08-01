@@ -3,6 +3,7 @@ import React from 'react';
 import renderTitle from './utils/render-title';
 import PropTypes from 'prop-types';
 import styles from './MasterLayout.module.scss';
+import Header from '../Header/Header';
 
 export default function MasterLayout(props) {
    const { title, children } = props;
@@ -14,8 +15,11 @@ export default function MasterLayout(props) {
             <title>{renderTitle(title)}</title>
          </Head>
 
-         {/* Contenido general */}
          <div className={styles.container}>
+            {/* Header & searchbar */}
+            <Header />
+
+            {/* Contenido general */}
             <div className={styles.content}>{children}</div>
          </div>
       </>

@@ -1,0 +1,61 @@
+.header {
+   background-color: $color-primary;
+   height: 50px;
+
+   .container {
+      @include grid-12;
+      height: 100%;
+      margin: auto;
+      padding: 8px $space-1;
+
+      .content {
+         grid-column: span 13;
+         display: flex;
+
+         .logo {
+            position: relative;
+            width: 50px;
+            height: 100%;
+            margin-right: $space-2;
+         }
+
+         .searchBar {
+            display: flex;
+            flex: 1;
+
+            input {
+               font-family: inherit;
+               border-radius: 4px;
+               border: unset;
+               width: 100%;
+               height: 100%;
+               font-size: 18px;
+               padding: 0 $space-1;
+            }
+
+            button {
+               border-radius: 4px;
+               background-image: url(/assets/icon-search.png);
+               position: relative;
+               width: 40px;
+               border: 0;
+               background-color: $color-gray-100;
+               background-repeat: no-repeat;
+               background-size: 20px;
+               background-position: center;
+               margin-left: -5px;
+               border-top-left-radius: 0;
+               border-bottom-left-radius: 0;
+               cursor: pointer;
+            }
+         }
+      }
+   }
+}
+
+// on tablet/desktop
+@include media('>mobile') {
+   .header .container .content {
+      grid-column: 2 / 12;
+   }
+}

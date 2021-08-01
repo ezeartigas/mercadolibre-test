@@ -3,9 +3,7 @@
    min-height: 100vh;
 
    .content {
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      max-width: $breakpoint-view;
+      @include grid-12;
       margin: auto;
       padding: $space-1;
    }

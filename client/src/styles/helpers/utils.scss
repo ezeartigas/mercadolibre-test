@@ -1,0 +1,8 @@
+@use 'variables' as *;
+
+@mixin grid-12 {
+   display: grid;
+   grid-template-columns: repeat(12, 1fr);
+   gap: $grid-gap;
+   max-width: $breakpoint-view;
+}

@@ -9,14 +9,15 @@ $color-secondary: #3483fa;
 /* Views */
 $breakpoint-view: 1200px;
 $breakpoints: (
-   'mobile': 320px,
+   'mobile': 576px,
    'tablet': 768px,
    'desktop': 1024px,
 );
+$grid-gap: 20px;
 
 /* Spaces */
 $space-1: 16px;
 $space-2: 32px;
 
 /* Font */
-$font-family: 'Poppins', sans-serif;
+$font-family: 'Lato', sans-serif;
