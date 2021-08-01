@@ -1,9 +1,8 @@
 .container {
-   grid-column: span 12;
+   grid-column: 2/12;
 
    .item {
-      grid-column: span 12;
-      display: inline;
+      display: inline-block;
       @include fontSize-2;
       color: $color-gray-200;
 

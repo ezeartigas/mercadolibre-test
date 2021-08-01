@@ -3,7 +3,7 @@
    height: 50px;
 
    .container {
-      @include grid-12;
+      @include grid(12);
       height: 100%;
       margin: auto;
       padding: 8px $space-1;

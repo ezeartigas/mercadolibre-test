@@ -6,6 +6,10 @@ $color-gray-400: #333;
 $color-primary: #ffe600;
 $color-secondary: #3483fa;
 
+/* Spaces */
+$space-1: 16px;
+$space-2: 32px;
+
 /* Views */
 $breakpoint-view: 1200px;
 $breakpoints: (
@@ -13,11 +17,8 @@ $breakpoints: (
    'tablet': 768px,
    'desktop': 1024px,
 );
-$grid-gap: 20px;
-
-/* Spaces */
-$space-1: 16px;
-$space-2: 32px;
+$grid-gap: $space-1;
+$border-radius: 4px;
 
 /* Font */
 $font-family: 'Lato', sans-serif;

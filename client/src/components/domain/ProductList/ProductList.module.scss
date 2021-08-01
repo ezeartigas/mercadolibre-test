@@ -1,0 +1,15 @@
+.container {
+   grid-column: span 12;
+   background-color: white;
+   padding: $space-1;
+
+   li:not(:last-child) {
+      border-bottom: 1px solid $color-gray-100;
+   }
+}
+
+@include media('>mobile') {
+   .container {
+      grid-column: 2/12;
+   }
+}
