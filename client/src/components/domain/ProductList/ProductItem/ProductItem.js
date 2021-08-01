@@ -2,10 +2,10 @@ import Image from 'next/image';
 import React from 'react';
 import Link from 'next/link';
 import styles from './ProductItem.module.scss';
+import formatPrice from '@utils/format-price';
 
 export default function ProductItem(props) {
-   const { title, thumbnail, shipping, address } = props;
-   const priceFormatted = props.price.toLocaleString('es-AR');
+   const { title, thumbnail, shipping, address, price } = props;
 
    return (
       <li>
@@ -20,7 +20,7 @@ export default function ProductItem(props) {
                <div className={styles.content}>
                   {/* Price & free shipping icon */}
                   <div className={styles.priceWrapper}>
-                     <span className={styles.price}>$ {priceFormatted}</span>
+                     <span className={styles.price}>$ {formatPrice(price)}</span>
 
                      {shipping.free_shipping && (
                         <Image

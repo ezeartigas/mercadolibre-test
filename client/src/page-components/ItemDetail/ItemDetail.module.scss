@@ -1,0 +1,58 @@
+.container {
+   @include grid(10);
+   grid-column: span 12;
+   background-color: white;
+   padding: $space-2;
+
+   .image {
+      grid-column: span 10;
+      grid-row: span 7;
+   }
+
+   .summary {
+      grid-column: span 10;
+
+      &__condition {
+         @include fontSize-2;
+         margin-bottom: $space-1;
+      }
+
+      &__title {
+         @include fontSize-5;
+         font-weight: 600;
+         margin-bottom: $space-2;
+      }
+      &__price {
+         @include fontSize-7;
+         margin-bottom: $space-2;
+      }
+   }
+
+   .description {
+      grid-column: span 10;
+
+      &__title {
+         @include fontSize-6;
+         display: block;
+         margin-bottom: $space-2;
+      }
+      &__text {
+         @include fontSize-3;
+         color: $color-gray-200;
+      }
+   }
+}
+
+@include media('>tablet') {
+   .container {
+      grid-column: 2/12;
+
+      .image {
+         grid-column: span 7;
+      }
+
+      .summary {
+         grid-column: span 3;
+      }
+   }
+}
