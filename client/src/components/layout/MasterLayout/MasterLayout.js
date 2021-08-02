@@ -1,6 +1,4 @@
-import Head from 'next/head';
 import React from 'react';
-import renderTitle from './utils/render-title';
 import PropTypes from 'prop-types';
 import styles from './MasterLayout.module.scss';
 import Header from '../Header/Header';

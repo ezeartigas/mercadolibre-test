@@ -1,5 +1,4 @@
 import React from 'react';
-import Image from 'next/image';
 import styles from './Header.module.scss';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
