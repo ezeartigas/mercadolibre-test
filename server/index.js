@@ -53,16 +53,14 @@ app.get('/api/items/:id', async function (req, res, next) {
       );
 
       res.json({
-         item: {
-            id: item.id,
-            title: item.title,
-            price: item.price,
-            picture: item.pictures[0].secure_url,
-            condition: item.condition,
-            free_shipping: item.shipping.free_shipping,
-            sold_quantity: item.sold_quantity,
-            description: description.plain_text,
-         },
+         id: item.id,
+         title: item.title,
+         price: item.price,
+         picture: item.pictures[0].secure_url,
+         condition: item.condition,
+         free_shipping: item.shipping.free_shipping,
+         sold_quantity: item.sold_quantity,
+         description: description.plain_text,
       });
    } catch (error) {
       next(error);

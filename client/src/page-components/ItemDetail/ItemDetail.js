@@ -1,16 +1,15 @@
+import { useItemDetail } from '@api/items';
 import { MasterLayout } from '@components/layout';
 import { Button } from '@components/ui';
-import { product_detail_mock } from '@mock/product-detail';
 import { TEXT_PRODUCT_CONDITION } from '@utils/constants';
 import formatPrice from '@utils/format-price';
 import Image from 'next/image';
 import styles from './ItemDetail.module.scss';
 
-const {
-   item: { condition, description, free_shipping, picture, price, sold_quantity, title },
-} = product_detail_mock;
+export default function ItemDetail(props) {
+   const { item } = props;
+   const { condition, description, picture, price, sold_quantity, title } = item;
 
-export default function ItemDetail() {
    const handleClick = () => {
       console.log('comprar');
    };
@@ -29,7 +28,7 @@ export default function ItemDetail() {
                </div>
 
                <h1 className={styles.summary__title}>{title}</h1>
-               <h2 className={styles.summary__price}>${formatPrice(price.amount)}</h2>
+               <h2 className={styles.summary__price}>${formatPrice(price)}</h2>
 
                <Button label="Comprar" onClick={handleClick} />
             </div>
