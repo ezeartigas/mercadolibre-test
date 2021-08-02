@@ -6,11 +6,7 @@ const axios = require('axios').default;
 
 dotenv.config();
 
-app.use(
-   cors({
-      origin: 'http://localhost:3000',
-   }),
-);
+app.use(cors({ origin: process.env.HOST_ORIGIN }));
 
 app.get('/api/items', async function (req, res, next) {
    try {
