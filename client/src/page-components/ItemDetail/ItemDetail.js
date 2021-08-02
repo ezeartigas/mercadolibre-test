@@ -55,7 +55,7 @@ export default function ItemDetail(props) {
 
             <div className={styles.description}>
                <span className={styles.description__title}>Descripción del producto</span>
-               <span className={styles.description__text}>{description}</span>
+               <p className={styles.description__text}>{description}</p>
             </div>
          </div>
       </MasterLayout>

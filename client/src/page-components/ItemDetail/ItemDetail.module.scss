@@ -39,6 +39,7 @@
       &__text {
          @include fontSize-3;
          color: $color-gray-200;
+         word-break: break-word;
       }
    }
 }
