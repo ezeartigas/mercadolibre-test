@@ -26,14 +26,7 @@ export default function Header() {
          <div className={styles.container}>
             <div className={styles.content}>
                <Link href="/">
-                  <a className={styles.logo}>
-                     <Image
-                        src="/assets/logo.png"
-                        alt="MercadoLibre"
-                        layout="fill"
-                        objectFit="cover"
-                     />
-                  </a>
+                  <a className={styles.logo}>MercadoLibre</a>
                </Link>
 
                <form className={styles.searchBar} onSubmit={handleSubmit}>
