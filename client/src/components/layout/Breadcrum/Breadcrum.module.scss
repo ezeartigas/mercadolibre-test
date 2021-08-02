@@ -1,5 +1,5 @@
 .container {
-   grid-column: 2/12;
+   grid-column: 1/12;
 
    .item {
       display: inline-block;
@@ -13,5 +13,11 @@
       .separator {
          margin: 0 5px;
       }
+   }
+}
+
+@include media('>tablet') {
+   .container {
+      grid-column: 2/12;
    }
 }
