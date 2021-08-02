@@ -7,28 +7,21 @@ import Header from '../Header/Header';
 import Breadcrum from '../Breadcrum/Breadcrum';
 
 export default function MasterLayout(props) {
-   const { title, showBreadcrum, children } = props;
+   const { showBreadcrum, children } = props;
 
    return (
-      <>
-         <Head>
-            {/* Mostramos un titulo especifico o uno por default */}
-            <title>{renderTitle(title)}</title>
-         </Head>
+      <div className={styles.container}>
+         {/* Header & searchbar */}
+         <Header />
 
-         <div className={styles.container}>
-            {/* Header & searchbar */}
-            <Header />
+         {/* Contenido general */}
+         <div className={styles.content}>
+            {/* Breadcrum */}
+            {showBreadcrum && <Breadcrum />}
 
-            {/* Contenido general */}
-            <div className={styles.content}>
-               {/* Breadcrum */}
-               {showBreadcrum && <Breadcrum />}
-
-               {children}
-            </div>
+            {children}
          </div>
-      </>
+      </div>
    );
 }
 

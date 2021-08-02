@@ -1,14 +1,15 @@
-import { useItemDetail } from '@api/items';
 import { MasterLayout } from '@components/layout';
 import { Button } from '@components/ui';
 import { TEXT_PRODUCT_CONDITION } from '@utils/constants';
 import formatPrice from '@utils/format-price';
 import Image from 'next/image';
 import styles from './ItemDetail.module.scss';
+import { NextSeo } from 'next-seo';
 
 export default function ItemDetail(props) {
    const { item } = props;
    const { condition, description, picture, price, sold_quantity, title } = item;
+   const priceFormatted = formatPrice(price);
 
    const handleClick = () => {
       console.log('comprar');
@@ -16,6 +17,23 @@ export default function ItemDetail(props) {
 
    return (
       <MasterLayout showBreadcrum>
+         <NextSeo
+            title={title}
+            description={`Compralo en Mercado Libre a $ ${priceFormatted}.`}
+            openGraph={{
+               url: document.location,
+               title,
+               description,
+               images: [{ url: picture }],
+               site_name: 'MercadoLibre',
+            }}
+            twitter={{
+               handle: '@handle',
+               site: '@site',
+               cardType: 'summary_large_image',
+            }}
+         />
+
          <div className={styles.container}>
             <div className={styles.image}>
                <Image src={picture} alt={title} width="680" height="680" objectFit="contain" />
@@ -28,7 +46,7 @@ export default function ItemDetail(props) {
                </div>
 
                <h1 className={styles.summary__title}>{title}</h1>
-               <h2 className={styles.summary__price}>${formatPrice(price)}</h2>
+               <h2 className={styles.summary__price}>${priceFormatted}</h2>
 
                <Button label="Comprar" onClick={handleClick} />
             </div>
