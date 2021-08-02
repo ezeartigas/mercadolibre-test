@@ -5,15 +5,15 @@ import styles from './ProductItem.module.scss';
 import formatPrice from '@utils/format-price';
 
 export default function ProductItem(props) {
-   const { title, thumbnail, shipping, address, price } = props;
+   const { id, title, picture, free_shipping, address, price } = props;
 
    return (
       <li>
-         <Link href="/">
-            <a href="#" className={styles.container}>
+         <Link href={`/items/${id}`}>
+            <a className={styles.container}>
                {/* Image */}
                <div className={styles.image}>
-                  <Image src={thumbnail} alt={title} width="180" height="180" objectFit="contain" />
+                  <Image src={picture} alt={title} width="180" height="180" objectFit="contain" />
                </div>
 
                {/* Side content */}
@@ -22,7 +22,7 @@ export default function ProductItem(props) {
                   <div className={styles.priceWrapper}>
                      <span className={styles.price}>$ {formatPrice(price)}</span>
 
-                     {shipping.free_shipping && (
+                     {free_shipping && (
                         <Image
                            src="/assets/icon-free-shipping.png"
                            alt="Envio gratis"

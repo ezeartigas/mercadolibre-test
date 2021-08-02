@@ -1,9 +1,16 @@
 const express = require('express');
 const app = express();
+const cors = require('cors');
 const dotenv = require('dotenv');
 const axios = require('axios').default;
 
 dotenv.config();
+
+app.use(
+   cors({
+      origin: 'http://localhost:3000',
+   }),
+);
 
 app.get('/api/items', async function (req, res, next) {
    try {
@@ -27,6 +34,7 @@ app.get('/api/items', async function (req, res, next) {
             picture: x.thumbnail,
             condition: x.condition,
             free_shipping: x.shipping.free_shipping,
+            address: x.address,
          }));
       }
 
