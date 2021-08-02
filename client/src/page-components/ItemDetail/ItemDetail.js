@@ -10,7 +10,7 @@ import { useRouter } from 'next/router';
 export default function ItemDetail(props) {
    const { item } = props;
    const router = useRouter();
-   const { condition, description, picture, price, sold_quantity, title } = item;
+   const { condition, description, picture, price, sold_quantity, title, categories } = item;
    const priceFormatted = formatPrice(price);
 
    const handleClick = () => {
@@ -18,7 +18,7 @@ export default function ItemDetail(props) {
    };
 
    return (
-      <MasterLayout showBreadcrum>
+      <MasterLayout breadcrumData={categories}>
          <NextSeo
             title={title}
             description={`Compralo en Mercado Libre a $ ${priceFormatted}.`}

@@ -5,7 +5,7 @@ import Header from '../Header/Header';
 import Breadcrum from '../Breadcrum/Breadcrum';
 
 export default function MasterLayout(props) {
-   const { showBreadcrum, children } = props;
+   const { breadcrumData, children } = props;
 
    return (
       <div className={styles.container}>
@@ -15,7 +15,7 @@ export default function MasterLayout(props) {
          {/* Contenido general */}
          <div className={styles.content}>
             {/* Breadcrum */}
-            {showBreadcrum && <Breadcrum />}
+            {breadcrumData && <Breadcrum data={breadcrumData} />}
 
             {children}
          </div>
@@ -25,5 +25,5 @@ export default function MasterLayout(props) {
 
 MasterLayout.propTypes = {
    title: PropTypes.string,
-   showBreadcrum: PropTypes.bool,
+   breadcrumData: PropTypes.array,
 };

@@ -6,7 +6,7 @@ import styles from './ProductList.module.scss';
 
 export default function ProductList() {
    const router = useRouter();
-   const { data, loading, error } = useSearchItems(router.query.search);
+   const { data, loading, error } = useSearchItems();
 
    // si no hay query param lo redireccionamos al home
    if (router.isReady && !router.query.search) {
