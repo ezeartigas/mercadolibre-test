@@ -5,9 +5,11 @@ import formatPrice from '@utils/format-price';
 import Image from 'next/image';
 import styles from './ItemDetail.module.scss';
 import { NextSeo } from 'next-seo';
+import { useRouter } from 'next/router';
 
 export default function ItemDetail(props) {
    const { item } = props;
+   const router = useRouter();
    const { condition, description, picture, price, sold_quantity, title } = item;
    const priceFormatted = formatPrice(price);
 
@@ -21,7 +23,7 @@ export default function ItemDetail(props) {
             title={title}
             description={`Compralo en Mercado Libre a $ ${priceFormatted}.`}
             openGraph={{
-               url: document.location,
+               url: router.asPath,
                title,
                description,
                images: [{ url: picture }],
